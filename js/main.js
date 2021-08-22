@@ -170,18 +170,13 @@ pageTwoNext.addEventListener('click', function(e) {
 
 function sortOptions(results) {
     const topThree = document.getElementById('topThree');
-    // var classname = document.querySelectorAll('[data-order]');
-    // var results = [];
-    // for (var i = 0; i < classname.length; ++i) {
-    //     results.push(classname[i]);
-    // }
     results
         .sort((a, b) => b.getAttribute('data-order') - a.getAttribute('data-order'));
-    if (results.length >= 3) {
+    if (results.length > 3) {
         topThree.style.display = 'block';
     }
     for (let i = 0; i < 3; i++) {
-    pageThree.appendChild(results[i]);
+        pageThree.appendChild(results[i]);
     }
     // results.forEach(function(res) {
     //     pageThree.appendChild(res);
